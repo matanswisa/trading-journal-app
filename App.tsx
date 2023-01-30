@@ -1,10 +1,15 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { Image, StyleSheet, Text, View } from 'react-native';
 
 export default function App() {
+  console.log('App is connected');
+
+
   return (
     <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
+      <Text numberOfLines={1} onPress={() => { console.log('hello world') }}>Press me</Text>
+      <Image source={{ width: 200, height: 300, uri: "https://picsum.photos/200/300" }}></Image>
+      <Image source={require('./assets/favicon.png')}></Image>
       <StatusBar style="auto" />
     </View>
   );
@@ -13,7 +18,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: 'dodgerblue',
     alignItems: 'center',
     justifyContent: 'center',
   },
